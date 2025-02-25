@@ -1,93 +1,265 @@
-# Group2-Integrative-development-of-a-CPS2
 
+## Overview
+This project is an **IoT and Web of Things (WoT) platform** that integrates sensor data, weather forecasting, and building automation to define and execute user-created **if-this-then-that (IFTTT) rules**. The platform consists of:
+- **Backend**: A Spring Boot application handling rules, notifications, and automation.
+- **Frontend**: A Vue.js-based web application to define rules and visualize data.
+- **CoAP Implementation**: An IoT component running on embedded devices to collect sensor data.
 
+---
+## Features
+- **Rule Engine**: Define and execute rules based on sensor and weather conditions.
+- **Building Automation**: Control environmental settings (temperature, lighting, etc.).
+- **Weather Service Integration**: Fetch real-time weather data.
+- **Web-Based UI**: A Vue.js interface for managing automation rules.
+- **CoAP and MQTT Support**: Communicate with IoT sensors and actuators.
 
-## Getting started
-
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
+---
+## Project Structure
 ```
-cd existing_repo
-git remote add origin https://gitlab.emse.fr/ext.m.ung/group2-integrative-development-of-a-cps2.git
-git branch -M main
-git push -uf origin main
+project-root/
+│── backend/                 # Spring Boot backend
+│── frontend/                # Vue.js frontend
+│── Coap_Implementation/     # CoAP-based IoT device implementation
+│── README.md                # Project documentation
 ```
 
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.emse.fr/ext.m.ung/group2-integrative-development-of-a-cps2/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
+---
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### 1. Backend Setup (Spring Boot)
+#### Prerequisites
+- Java 21+
+- Gradle 8+
+- H2 in-memory DB
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+#### Installation & Running
+```sh
+cd backend
+./gradlew bootRun  # Run the backend server
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+**And you can run it with IntelliJ** 
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### 2. Frontend Setup (Vue.js)
+#### Prerequisites
+- Node.js (18+)
+- Vue CLI
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+#### Installation & Running
+```sh
+cd frontend
+npm install  # Install dependencies
+npm run dev  # Run the frontend server
+```
 
-## License
-For open source projects, say how it is licensed.
+The frontend will be available at `http://localhost:5173/`.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+### 3. CoAP IoT Sensor Implementation
+An ESP32-based IoT device implementing OCF specifications v2.2.7 with CoAP/CBOR for:
+- Environmental sensing (temperature/humidity)
+- Distance measurement
+- RGB LED control
+- Button state monitoring
+- OLED display output
+
+## Hardware Components
+| Component       | ESP32 Pin |
+|-----------------|-----------|
+| DHT22 Sensor    | GPIO27    |
+| RGB LED (NeoPixel) | GPIO13  |
+| Ultrasonic Trigger | GPIO12  |
+| Ultrasonic Echo | GPIO14    |
+| OLED SDA        | GPIO21    |
+| OLED SCL        | GPIO22    |
+| Button          | GPIO32    |
+
+## Software Dependencies
+- MicroPython 1.24+
+- Libraries:
+  - `microcoapy`
+  - `cbor2`
+  - `ssd1306.py` (OLED driver)
+  - `dht` & `neopixel` (built-in)
+
+
+
+### 1. Resource Discovery
+- **Endpoint**: `/.well-known/core`
+- **Method**: GET
+- **Content Format**: Link-Format (40)
+- **Response**:
+  ```text
+  </Temperature>;rt="oic.r.temperature";if="oic.if.s";ct=60,
+  </Humidity>;rt="oic.r.humidity";if="oic.if.s";ct=60,
+  </RGB>;rt="oic.r.colour.rgb";if="oic.if.a";ct=60,
+  </Proximity>;rt="oic.r.sensor.proximity";if="oic.if.s";ct=60,
+  </Button>;rt="oic.r.button";if="oic.if.s";ct=60,
+  </Console>;rt="oic.r.console";if="oic.if.a";ct=60
+
+### CoAP Endpoints
+#### 1. Resource Discovery
+Endpoint: /.well-known/core
+
+Method: GET
+
+Content Format: Link-Format (40)
+
+Response:
+
+text
+Copy
+</Temperature>;rt="oic.r.temperature";if="oic.if.s";ct=60,
+</Humidity>;rt="oic.r.humidity";if="oic.if.s";ct=60,
+</RGB>;rt="oic.r.colour.rgb";if="oic.if.a";ct=60,
+</Proximity>;rt="oic.r.sensor.proximity";if="oic.if.s";ct=60,
+</Button>;rt="oic.r.button";if="oic.if.s";ct=60,
+</Console>;rt="oic.r.console";if="oic.if.a";ct=60
+
+#### 2.Temperature Sensor
+
+- **Endpoint**: /Temperature
+- **Resource Type**: oic.r.temperature
+- **Interface**: oic.if.s
+- **Content Type**: ct=60
+
+**Usage**
+coap-client -m get coap://<device_ip>/Temperature | python3 -c 'import cbor2, sys; print(cbor2.load(sys.stdin.buffer))'
+
+
+**Response Example**:
+
+json
+Copy
+{
+  "rt": "oic.r.temperature",
+  "properties": {
+    "temperature": 25.6,
+    "units": "C"
+  }
+}
+
+#### 3. Humidity Sensor
+- **Endpoint**: /Humidity
+- **Resource Type**: oic.r.humidity
+- **Interface**: oic.if.s
+- **Content Type**: ct=60
+
+**Usage**
+coap-client -m get coap://<device_ip>/Humidity | python3 -c 'import cbor2, sys; print(cbor2.load(sys.stdin.buffer))'
+
+**Response Example**:
+
+json
+Copy
+{
+  "rt": "oic.r.humidity",
+  "properties": {
+    "humidity": 48.3,
+    "units": "%"
+  }
+}
+
+
+#### 4. RGB LED Control
+- **Endpoint**: /RGB
+- **Resource Type**: oic.r.colour.rgb
+- **Interface**: oic.if.a
+- **Content Type**: ct=60
+
+**Usage**
+  python3 -c 'import cbor2, sys; cbor2.dump({"properties": {"r": 255, "g": 0, "b": 0}}, sys.stdout.buffer)' | \
+coap-client -m put coap://<device_ip>/RGB -C 60 -f -
+
+**Methods**:
+
+GET: Retrieve current state
+
+PUT: Set new color
+
+**PUT Payload Example**:
+
+json
+Copy
+{
+  "rt": "oic.r.colour.rgb",
+  "properties": {
+    "colourRGB": {
+      "r": 100,
+      "g": 200,
+      "b": 50
+    }
+  }
+}
+
+
+
+#### 5. Proximity Sensor
+
+- **Endpoint**: /Distance
+- **Resource Type**: oic.r.distance
+- **Interface**: oic.if.s
+- **Content Type**: ct=60
+
+**Usage**   
+coap-client -m get coap://<device_ip>/Proximity | python3 -c 'import cbor2, sys; print(cbor2.load(sys.stdin.buffer))'
+
+**Response Example**:
+
+json
+Copy
+{
+  "rt": "oic.r.sensor.proximity",
+  "properties": {
+    "distance": 15.5,
+    "units": "cm"
+  }
+}
+
+#### 6. Button State
+
+- **Endpoint**: /Button
+ - **Resource Type**: oic.r.button
+ - **Interface**: oic.if.s
+ - **Content Type**: ct=60
+
+ **Usage**
+ coap-client -m get coap://<device_ip>/Button | python3 -c 'import cbor2, sys; print(cbor2.load(sys.stdin.buffer))'
+
+**Response Example**:
+
+json
+Copy
+{
+  "rt": "oic.r.button",
+  "properties": {
+    "state": "PRESSED"
+  }
+}
+
+#### 7. OLED Display Control
+
+- **Endpoint**: /console
+ - **Resource Type**: oic.r.console
+ - **Interface**: oic.if.a
+ - **Content Type**: ct=60
+ 
+ **Usage**
+ echo 'Hello World' | coap-client -m put coap://<device_ip>/Console -C 60 -f -
+
+
+**Payload Example**:
+
+json
+Copy
+{
+  "rt": "oic.r.console",
+  "properties": {
+    "message": "Hello OCF!"
+  }
+}
+
+
+
+
